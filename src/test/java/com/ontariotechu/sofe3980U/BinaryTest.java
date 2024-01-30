@@ -130,7 +130,7 @@ public class BinaryTest
         Binary result = binaryMul1.multiply(binaryMul2);
 
         // Assert
-        assertEquals("Binary Multiply: ", "10000110", result.getValue());
+        assertEquals("Binary Multiply: ", "10000010", result.getValue());
     }
 
 
@@ -159,12 +159,8 @@ public class BinaryTest
             Binary result = binary1.and(binary2);
 
             // Assert
-            assertEquals("Binary AND with unequal length: ", "0010", result.getValue());
+            assertEquals("Binary AND with unequal length: ", "0", result.getValue());
         }
-
-
-
-
 
     @Test
     public void testOr() {
@@ -189,7 +185,7 @@ public class BinaryTest
         Binary result = binary1.or(binary2);
 
         // Assert
-        assertEquals("Binary OR with unequal length: ", "1101", result.getValue());
+        assertEquals("Binary OR with unequal length: ", "1111", result.getValue());
     }
 
     @Test

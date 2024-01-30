@@ -128,16 +128,16 @@ public class Binary
 
 		// Putting 0s to the left of the string in order to the strings have the same length,
 		// if one of them is less in length.
-		String binary1 = padWithLeadingZeros(this.number, maxLength);
-		String binary2 = padWithLeadingZeros(operand.number, maxLength);
+		String binaryAnd1 = padWithLeadingZeros(this.number, maxLength);
+		String binaryAnd2 = padWithLeadingZeros(operand.number, maxLength);
 
 		StringBuilder result = new StringBuilder();
 
 
 		//Assigning current values of the bit strings to char1 and char2.
 		for (int i = 0; i < maxLength; i++) {
-			char char1 = binary1.charAt(i);
-			char char2 = binary2.charAt(i);
+			char char1 = binaryAnd1.charAt(i);
+			char char2 = binaryAnd2.charAt(i);
 
 			//Appending the variable result with 0 or 1 according to the condition.
 			result.append((char1 == '1' && char2 == '1') ? '1' : '0');
@@ -149,19 +149,20 @@ public class Binary
 
 	// Defining a multiplication method that multiplies the 2 numbers.
 	public Binary multiply(Binary operand) {
-		//Converting the binary strings to their integer values'
-		//Using the parseInt method in Integer class.
+		// Convert binary strings to integer values for multiplication
 		int num1 = Integer.parseInt(this.number, 2);
 		int num2 = Integer.parseInt(operand.number, 2);
 
-
+		// Calculate the product
 		int product = num1 * num2;
 
-		// Converting back to string.
+		// Convert the product back to binary string
 		String resultBinary = Integer.toBinaryString(product);
 
 		return new Binary(resultBinary);
 	}
+
+
 
 
 
